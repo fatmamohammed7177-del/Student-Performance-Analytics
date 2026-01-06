@@ -22,7 +22,7 @@ namespace StudentPerformanceAnalytics
             string report = "";
             int totalStudents = 0;
             
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 1; i < student.Count; i++)
             {
                 Student s = students[i];
                 double avg = s.AverageGrade;
