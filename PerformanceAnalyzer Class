@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+
+namespace StudentPerformanceAnalytics
+{
+    public class Student
+    {
+        public string Name { get; set; }
+        public double AverageGrade { get; set; }
+        
+        public Student(string name, double averageGrade)
+        {
+            Name = name;
+            AverageGrade = averageGrade;
+        }
+    }
+
+    public class PerformanceAnalyzer
+    {
+        public string AnalyzePerformance(List<Student> students)
+        {
+            string report = "";
+            int totalStudents = 0;
+            
+            for (int i = 0; i < students.Count; i++)
+            {
+                Student s = students[i];
+                double avg = s.AverageGrade;
+                string level;
+                
+                if (avg >= 90)
+                {
+                    level = "Excellent";
+                }
+                else if (avg >= 75)
+                {
+                    level = "Good";
+                }
+                else if (avg >= 60)
+                {
+                    level = "Average";
+                }
+                else
+                {
+                    level = "Needs Improvement";
+                }
+                
+                report += s.Name + ": " + avg + "% - " + level + "\n";
+                totalStudents++;
+            }
+            
+            report += "Total Students Analyzed: " + totalStudents;
+            return report;
+        }
+    }
+}
