@@ -28,7 +28,7 @@ namespace StudentPerformanceAnalytics
                 double avg = s.AverageGrade;
                 string level;
                 
-                if (avg >= 90)
+                if (avg >= 85)
                 {
                     level = "Excellent";
                 }
